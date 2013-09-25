@@ -48,9 +48,9 @@ In the following example we do a DNS lookup for a domain name. We then create a 
 ```
 
 
-#### Using Nokogiri
+## Using Nokogiri
 
-##### Fetching a webpage
+### Fetching a webpage
 
 ```ruby
 1.9.3-p392 :032 > require 'open-uri'
@@ -60,7 +60,7 @@ In the following example we do a DNS lookup for a domain name. We then create a 
 1.9.3-p392 :034 > doc = Nokogiri::HTML(open('http://www.linkedin.com/in/janedoe'))
 ```
 
-##### Retrieving Elements
+### Retrieving Elements
 ```ruby
 1.9.3-p392 :038 > doc.css('span.given-name').text
  => "Jane" 
@@ -70,7 +70,7 @@ In the following example we do a DNS lookup for a domain name. We then create a 
  => "Brooklyn, New York" 
 ```
 
-##### Retrieving PGP email addresses
+### Retrieving PGP email addresses
 
 First we create a ```fetch_pgp``` which fetches URL and places response in Nokogiri objects.
 ```ruby
@@ -83,13 +83,13 @@ First we create a ```fetch_pgp``` which fetches URL and places response in Nokog
  ...
 ```
 
-##### Iterate and Parse PGP Keys
+### Iterate and Parse PGP Keys
 ```ruby
 1.9.3-p392 :189 > doc.css('a').each do |link|
 1.9.3-p392 :190 >     puts link.content
 1.9.3-p392 :191?> end
 ```
-###### Results
+#### Results
 Notice that we have unwanted data since we only want email address.
 
 ```ruby
@@ -99,7 +99,7 @@ John Doe <john_doe@foo.com>
 Jane Doe <jane_doe@foo.com>
 ```
 
-###### Regex to grab foo related links
+### Regex to grab foo related links
 ```ruby
 1.9.3-p392 :193 >   doc.css('a').each do |link|
 1.9.3-p392 :194 >     if link.content =~ /foo/
@@ -107,12 +107,12 @@ Jane Doe <jane_doe@foo.com>
 1.9.3-p392 :196?>     end
 1.9.3-p392 :197?>   end
 ```
-###### Results
+#### Results
 ```ruby
 John Doe <john_doe@foo.com>
 Jane Doe <jane_doe@foo.com>
 ```
-###### gsub to cleanup email addresses
+### gsub to cleanup email addresses
 
 ```ruby
 1.9.3-p392 :210 > email = ' <john_doe@foo.com>'
@@ -121,7 +121,7 @@ Jane Doe <jane_doe@foo.com>
  => "john_doe@foo.com" 
 ```
 
-###### Create array of email addresses
+### Create array of email addresses
 
 ```ruby
 1.9.3-p392 :220 > emails = []
