@@ -114,5 +114,16 @@ Jane Doe <jane_doe@foo.com>
  => "john_doe@foo.com" 
 ```
 
+###### Create array of email addresses
 
+```ruby
+1.9.3-p392 :220 > emails = []
+ => [] 
+1.9.3-p392 :221 > doc.css('a').each do |link|
+1.9.3-p392 :222 >     if link.content =~ /foo/
+1.9.3-p392 :223?>       emails << link.content.split.last.gsub(/<|>/, "")
+1.9.3-p392 :224?>     end
+1.9.3-p392 :225?>   end
+ => 0 
+```
 
