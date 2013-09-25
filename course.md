@@ -67,7 +67,7 @@ gem install nokogiri
 
 First we create a ```fetch_pgp``` which fetches URL and places response in Nokogiri objects.
 ```ruby
-1.9.3-p392 :181 > def fetch_pgp(domain)
-1.9.3-p392 :182?>   Nokogiri::HTML(open("http://pgp.mit.edu:11371/pks/lookup?search=#{domain}&op=index&exact=on"))
-1.9.3-p392 :183?> end
+ > def fetch_pgp(domain)
+?>   Nokogiri::HTML(open("http://pgp.mit.edu:11371/pks/lookup?search=#{domain}&op=index&exact=on"
+?> end
 ```
