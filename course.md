@@ -71,7 +71,7 @@ First we create a ```fetch_pgp``` which fetches URL and places response in Nokog
 ?>   Nokogiri::HTML(open("http://pgp.mit.edu:11371/pks/lookup?search=#{domain}&op=index&exact=on"
 ?> end
 
-1.9.3-p392 :184 > fetch_pgp('foo.com')
+1.9.3-p392 :184 > doc = fetch_pgp('foo.com')
  => #<Nokogiri::HTML::Document:0x3ff3e115f148 name="document" ....
  ...
 ```
