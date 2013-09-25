@@ -6,6 +6,7 @@ OSINT gathering allows security professionals to perform security assessment on 
   - Reverse Lookups
   - Web Scraping
   - Email Address Collection
+
 The following code snippets are examples of the collecting this information.
 
 ### Requiring gems
