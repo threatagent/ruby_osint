@@ -36,7 +36,10 @@ gem install nokogiri
 ```
 #### Whois lookup by IP Address
 ```ruby
-w.lookup('8.8.8.8')
+1.9.3-p392 :010 > w = Whois::Client.new
+ => #<Whois::Client:0x007fe7c22f0088 @timeout=10, @settings={}> 
+1.9.3-p392 :011 > w.lookup('8.8.8.8')
+ =>  ...
 ```
 
 #### Using Nokogiri
