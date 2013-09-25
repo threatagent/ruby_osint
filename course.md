@@ -65,7 +65,7 @@ gem install nokogiri
 
 ##### Retrieving PGP email addresses
 
-First we create a ```fetch_pgp``` which fetch URL and places response in Nokogiri objects.
+First we create a ```fetch_pgp``` which fetches URL and places response in Nokogiri objects.
 ```ruby
 1.9.3-p392 :181 > def fetch_pgp(domain)
 1.9.3-p392 :182?>   Nokogiri::HTML(open("http://pgp.mit.edu:11371/pks/lookup?search=#{domain}&op=index&exact=on"))
