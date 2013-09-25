@@ -92,4 +92,27 @@ John Doe <john_doe@foo.com>
 Jane Doe <jane_doe@foo.com>
 ```
 
+###### Regex to grab foo related links
+```ruby
+1.9.3-p392 :193 >   doc.css('a').each do |link|
+1.9.3-p392 :194 >     if link.content =~ /foo/
+1.9.3-p392 :195?>       puts link.content
+1.9.3-p392 :196?>     end
+1.9.3-p392 :197?>   end
+```
+###### Results
+```ruby
+John Doe <john_doe@foo.com>
+Jane Doe <jane_doe@foo.com>
+```
+###### gsub to cleanup email addresses
+
+```ruby
+1.9.3-p392 :210 > email = ' <john_doe@foo.com>'
+
+1.9.3-p392 :210 > email.gsub(/<|>/, "")
+ => "john_doe@foo.com" 
+```
+
+
 
