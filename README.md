@@ -1,12 +1,26 @@
 # Ruby Open Source Intelligence (OSINT)
 
-## Prerequisites
+## Course Setup
+
+### Required Rubygems
+
+#### gem install whois
+```bash
+$ gem install whois
+```
+#### gem install nokogiri
+```bash
+$ gem install nokogiri
+```
+
+### Registering for APIs
+
 * [Bing API key](http://www.bing.com/dev/en-us/dev-center)
 * [Facebook access token](http://developers.facebook.com/docs/reference/api/)
 * [Twitter access token](https://dev.twitter.com/docs/api)
 * [Shodan API key](http://www.shodanhq.com/api_doc)
 
-## Environment variables
+### Environment variables (optional)
 You can export environment variables multiple ways.
 The easiest way is to create a `~/.bash_env` file that you source in your `~/.bashrc`.
 
