@@ -70,4 +70,26 @@ First we create a ```fetch_pgp``` which fetches URL and places response in Nokog
  > def fetch_pgp(domain)
 ?>   Nokogiri::HTML(open("http://pgp.mit.edu:11371/pks/lookup?search=#{domain}&op=index&exact=on"
 ?> end
+
+1.9.3-p392 :184 > fetch_pgp('foo.com')
+ => #<Nokogiri::HTML::Document:0x3ff3e115f148 name="document" ....
+ ...
 ```
+
+##### Iterate and Parse PGP Keys
+```ruby
+1.9.3-p392 :189 > doc.css('a').each do |link|
+1.9.3-p392 :190 >     puts link.content
+1.9.3-p392 :191?> end
+```
+###### Results
+Notice that we have unwanted data since we only want email address.
+
+```ruby
+12345678
+John Doe <john_doe@foo.com>
+23456789
+Jane Doe <jane_doe@foo.com>
+```
+
+
