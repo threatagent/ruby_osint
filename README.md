@@ -12,7 +12,7 @@ The easiest way is to create a `~/.bash_env` file that you source in your `~/.ba
 
 ```bash
 # Source the bash env file if it's there
-echo "if [ -f ~/.bash_env ]; source ~/.bash_env; fi" >> ~/.bashrc
+echo "if [ -f ~/.bash_env ]; then source ~/.bash_env; fi" >> ~/.bashrc
 
 # Append each key and ensure that you *export* them
 echo "export SHODAN_API_KEY='your_api_key'" >> ~/.bash_env
