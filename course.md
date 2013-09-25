@@ -1,7 +1,12 @@
 # Ruby Open Source Intelligence (OSINT)
 
-## Introduction
-
+## Introduction to OSINT
+OSINT gathering allows security professionals to perform security assessment on an organization. You can use Ruby to automate many OSINT gathering tasks such as:
+  - Domain Lookups
+  - Reverse Lookups
+  - Web Scraping
+  - Email Address Collection
+The following code snippets are examples of the collecting this information.
 
 ### Requiring gems
 
@@ -29,6 +34,19 @@
 1.9.3-p392 :011 > w.lookup('8.8.8.8')
  =>  ...
 ```
+
+### Reverse Whois Lookup
+In the following example we do a DNS lookup for a domain name. We then create a method that does a Whois lookup based on the IP address associated with the domain.
+```ruby
+1.9.3-p392 :027 > Resolv.getaddress('google.com')
+ => "74.125.227.129" 
+1.9.3-p392 :028 > def reverse_lookup(domain)
+1.9.3-p392 :029?>   puts Whois.query(Resolv.getaddress(domain))
+1.9.3-p392 :030?> end
+ => nil 
+1.9.3-p392 :031 > reverse_lookup('google.com')
+```
+
 
 #### Using Nokogiri
 
