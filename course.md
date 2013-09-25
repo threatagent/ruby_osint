@@ -26,7 +26,7 @@ gem install nokogiri
  => true 
 ```
 
-#### Using Whois gem
+#### Whois lookup by domain
 
 ```ruby
 1.9.3-p392 :008 > w = Whois::Client.new
@@ -34,6 +34,24 @@ gem install nokogiri
 1.9.3-p392 :009 > w.lookup('google.com')
  =>  ...
 ```
+#### Whois lookup by IP Address
+```ruby
+w.lookup('8.8.8.8')
+```
+
+#### Using Nokogiri
+
+##### Fetching a webpage
+
+```ruby
+1.9.3-p392 :032 > require 'open-uri'
+ => true 
+1.9.3-p392 :033 > require 'nokogiri'
+ => false 
+1.9.3-p392 :034 > doc = Nokogiri::HTML(open('http://www.linkedin.com/in/janedoes'))
+```
+
+
 
 
 
