@@ -11,7 +11,7 @@ $ gem install whois
 ```
 #### gem install nokogiri
 ```bash
-gem install nokogiri
+$ gem install nokogiri
 ```
 
 #### Requiring gems
