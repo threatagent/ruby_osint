@@ -51,10 +51,15 @@ gem install nokogiri
  => true 
 1.9.3-p392 :033 > require 'nokogiri'
  => false 
-1.9.3-p392 :034 > doc = Nokogiri::HTML(open('http://www.linkedin.com/in/janedoes'))
+1.9.3-p392 :034 > doc = Nokogiri::HTML(open('http://www.linkedin.com/in/janedoe'))
 ```
 
-
-
+##### Retrieving Elements
+```ruby
+1.9.3-p392 :038 > doc.css('span.given-name').text
+ => "Jane" 
+1.9.3-p392 :039 > doc.css('span.family-name').text
+ => "Doe" 
+```
 
 
