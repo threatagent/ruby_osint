@@ -14,7 +14,6 @@ $ gem install whois
 gem install nokogiri
 ```
 
-
 #### Requiring gems
 
 ```ruby
@@ -59,7 +58,8 @@ gem install nokogiri
 1.9.3-p392 :038 > doc.css('span.given-name').text
  => "Jane" 
 1.9.3-p392 :039 > doc.css('span.family-name').text
- => "Doe" 
+ => "Doe"
+1.9.3-p392 :048 > doc.css('span.locality').text.strip
+ => "Brooklyn, New York" 
 ```
-
 
