@@ -140,9 +140,6 @@ Jane Doe <jane_doe@foo.com>
 ```ruby
 
 require 'shodan'
-require 'json'
-
-keys = JSON.parse(File.read('keys.json'))
 
 api = Shodan::WebAPI.new(ENV['SHODAN_API'])
 
