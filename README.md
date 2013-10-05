@@ -32,6 +32,12 @@ $ gem install shodan
 * [Twitter access token](https://dev.twitter.com/docs/api)
 * [Shodan API key](http://www.shodanhq.com/api_doc)
 
+### Bing API Setup
+
+Once you logged into http://www.bing.com/dev/en-us/dev-center
+- Click on "Search API" and navigate to "My Account" > "My Data".  
+- From there you can click the "Use" link to navigate to https://datamarket.azure.com/dataset/explore/bing/search.  
+
 ### Environment variables (optional)
 You can export environment variables multiple ways.
 The easiest way is to create a `~/.bash_env` file that you source in your `~/.bashrc`.
