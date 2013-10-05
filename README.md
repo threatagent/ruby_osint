@@ -4,13 +4,25 @@
 
 ### Required Rubygems
 
-#### gem install whois
+#### Whois
 ```bash
 $ gem install whois
 ```
-#### gem install nokogiri
+#### Nokogiri
 ```bash
 $ gem install nokogiri
+```
+
+#### Twitter
+
+```bash
+$ gem install twitter
+```
+
+#### Shodan
+
+```bash
+$ gem install shodan
 ```
 
 ### Registering for APIs
