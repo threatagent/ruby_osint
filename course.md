@@ -172,7 +172,24 @@ end
 ```
 
 ## Bing
+```ruby
+require 'net/http'
 
+def search(query, offset)
+  account_key = ENV['BING_KEY']
 
+  # Old URL format
+  url = "https://api.datamarket.azure.com/Data.ashx/Bing/SearchWeb/v1/Web?Query=%27#{query}%27&$top=50&$skip=#{offset}&$format=json"
+
+  # New URL format
+  #url = "https://api.datamarket.azure.com/Bing/Search/v1/Web?Query=%27#{query}%27&$top=50&$skip=#{offset}&$format=json"
+
+  uri = URI.parse(url)
+  req = Net::HTTP::Get.new(uri.request_uri)
+  req.basic_auth '', account_key
+  res = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https'){|http| http.request(req)}
+  res.body
+end
+```
 
 
