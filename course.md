@@ -135,3 +135,41 @@ Jane Doe <jane_doe@foo.com>
  => 0 
 ```
 
+## Shodan
+
+```ruby
+
+require 'shodan'
+require 'json'
+
+keys = JSON.parse(File.read('keys.json'))
+
+api = Shodan::WebAPI.new(ENV['SHODAN_API'])
+
+result = api.search('cisco ios')
+
+result['matches'].each do |host|
+    puts "#{host['ip']}"
+end
+```
+
+## Twitter
+
+```ruby
+require 'twitter'
+
+client = Twitter.configure do |config|
+  config.consumer_key        = ENV['CONSUMER_KEY']
+  config.consumer_secret     = ENV['CONSUMER_SECRET']
+  config.oauth_token        = ENV['OAUTH_TOKEN']
+  config.oauth_token_secret = ENV['OAUTH_TOKEN_SECRET']
+end
+
+  search = client.user_search('microsoft')
+  search.each do |user|
+    puts "@#{user['screen_name']}"
+  end
+```
+
+
+
