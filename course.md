@@ -165,10 +165,10 @@ client = Twitter.configure do |config|
   config.oauth_token_secret = ENV['OAUTH_TOKEN_SECRET']
 end
 
-  search = client.user_search('microsoft')
-  search.each do |user|
-    puts "@#{user['screen_name']}"
-  end
+search = client.user_search('microsoft')
+search.each do |user|
+  puts "@#{user['screen_name']}"
+end
 ```
 
 ## Bing
